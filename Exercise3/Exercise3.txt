@@ -1,0 +1,52 @@
+1.
+//Get the Parent node
+tileContainer  = document.getElementsByClassName("slick-track")[0];
+//Get Alienware tile
+getTile = document.getElementsByClassName("cat-tile")[4];
+//Clone the tile
+cloneTile = getTile.cloneNode(true);
+//Place it in the first position after Shop All.
+tileContainer.insertBefore(cloneTile, document.getElementsByClassName("cat-tile")[1]);
+//Remove from the original position.
+document.getElementsByClassName("cat-tile")[5].remove();
+
+2.
+//Get Alienware div
+Alienware = document.getElementsByClassName("fran active")[3];
+//Get the Parent div
+ParentAlienware = document.getElementsByClassName("cat-off-screen-pane")[0];
+//Clone the Alienware div
+CloneAlienwareTile = Alienware.cloneNode(true);
+//Place it in the first position .
+ParentAlienware.insertBefore(CloneAlienwareTile, document.getElementsByClassName("fran active")[0]);
+//Remove from the original position.
+document.getElementsByClassName("fran active")[4].remove();
+
+3.
+//getanav div and append all the filters
+var getNav = document.getElementsByClassName("anav")[0].getElementsByTagName("ul")[0];
+getNav.innerHTML = '<h5><a><span>Price</span><span class="anav-icon anav-expand"></span></a></h5><ul><li> <input type="checkbox" onclick="checkBoxClick()" checked ><label> Under $500</label></li><li> <input type="checkbox" onclick="checkBoxClick()"checked ><label> $500 - $800</label></li><li> <input type="checkbox" onclick="checkBoxClick() checked" ><label> $800</label></li></ul>';
+
+4.
+//create new div for dynamic links 
+filteraDiv = document.createElement('div');
+
+filteraDiv.setAttribute('class', 'fran');
+//Clone it
+clonefd = filteraDiv.cloneNode(true);
+
+//append in on top of alienware laptops
+ParentAlienware.insertBefore(clonefd, document.getElementsByClassName("fran active")[0]);
+//add anchor tags and keep appending then to the div containing dynamic links
+a1 = document.createElement('a');
+a1text = document.createTextNode('Screen Size');
+filteraDiv.appendChild(a1);
+a2 = document.createElement('a');
+a2text = document.createTextNode('Processor');
+filteraDiv.appendChild(a2);
+a3 = document.createElement('a');
+a3text = document.createTextNode('Processsor Generation');
+filteraDiv.appendChild(a3);
+a4 = document.createElement('a4');
+a1text = document.createTextNode('Memory (RAM)');
+filteraDiv.appendChild(a4); //Similary for rest of the left nav filters

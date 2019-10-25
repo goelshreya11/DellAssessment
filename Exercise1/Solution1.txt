@@ -1,0 +1,57 @@
+//Get the parent div conatining all the 4 tiles.
+parentnode = document.getElementsByClassName("row resource-tiles")[0];
+//Get the class name of the tile in order to change the size of the div.
+//Change the size of the div by changing the class.
+elems = parentnode.getElementsByClassName("col-md-3 col-sm-6 col-xs-12");
+elems[0].className = "col-md-6 col-sm-6 col-xs-12";
+elems[0].className = "col-md-6 col-sm-6 col-xs-12";
+elems[0].className = "col-md-6 col-sm-6 col-xs-12";
+elems[0].className = "col-md-6 col-sm-6 col-xs-12";
+//Change the class of the tile with the new class.
+elems = parentnode.getElementsByClassName("col-md-6 col-sm-6 col-xs-12");
+//Create new div with class row.
+row1 = document.createElement('div');
+row1.setAttribute('class', 'row');
+//Insert the new div before the first two tiles.
+parentnode = document.getElementsByClassName("row resource-tiles")[0];
+parentnode.insertBefore(row1, elems[0]);
+row1.appendChild(elems[0]);
+row1.appendChild(elems[1]);
+//Create another new div with class row to bring the tiles to next line
+row2 = document.createElement('div');
+row2.setAttribute('class', 'row');
+//Append the next to tiles in second div.
+parentnode.insertBefore(row2, elems[2]);
+row2.appendChild(elems[2]);
+row2.appendChild(elems[3]);
+//Create a column to append both the row divs.
+column1 = document.createElement('div');
+column1.setAttribute('class', 'column');
+//Place the column div before row1 div.
+parentnode.insertBefore(column1, row1);
+//Append both the row divs in Column1.
+column1.appendChild(row1);
+column1.appendChild(row2);
+//Create column2 div.
+column2 = document.createElement('div');
+column2.setAttribute('class', 'column');
+//Append it in the last.
+parentnode.appendChild(column2);
+//Get the search box div.
+search = document.getElementsByClassName("product-selector jumbotron-overlay")[0];
+//append it to the new column2.
+column2.appendChild(search)
+//add styling to the required elements.
+var ele = document.getElementsByClassName('column');
+ele[0].style.width = "50%"
+ele[1].style.width = "50%"
+ele[0].style.float = "left"
+ele[1].style.float = "left"
+search.style.marginTop = "-170px"
+search.style.marginBottom = "0px"
+search.getElementsByClassName("col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0 divHomeEntrySelection")[0].className = "col-lg-8 col-md-10 col-xs-12 divHomeEntrySelection";
+styleElement = document.createElement('style');
+styleElement.type = 'text/css';
+styleElement.id = 'styles_js';
+document.getElementsByTagName('head')[0].appendChild(styleElement);
+styleElement.appendChild(document.createTextNode(".product-selector.jumbotron-overlay { margin-top : 0px !important;}"));

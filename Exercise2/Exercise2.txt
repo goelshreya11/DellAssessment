@@ -1,0 +1,65 @@
+Exercise-2
+1.
+//Set the transition-duration property to none.
+$('[class="slides"]').css("transition-duration", "none");
+
+2. 
+//Change the background color of the first banner to purple and second to green.
+$('[class="banner-content-wrapper green hidden-xs"]').css("background-color", "purple");
+$('[class="banner-content-wrapper teal hidden-xs"]').css("background-color", "green");
+
+3. 
+//Get the div to change the background color .
+row = $('[class="text-centered right-offset-15 xs-left-offset-15 gray-light half-image-module"]');
+//Iterate through the list and find the networking tile.
+networking = row[10];
+
+//Change the background color to purple.
+$(networking).css("background-color", "purple");
+
+
+//Get the div to change the images corresponding to networking div.
+rowitem = $('[class="half-hero"]');
+//Iterate through the list and find the div contaning networking images.
+networkdiv = rowitem[10];
+
+//Get the image tag.
+moduleitems = networkdiv.getElementsByTagName("img");
+
+//Append the new images.
+moduleitems[1].src = "//snpi.dell.com/snp/images2/110/a9779735.jpg";
+moduleitems[2].src = "//snpi.dell.com/snp/images2/110/a9779822.jpg";
+moduleitems[3].src = "//snpi.dell.com/snp/images2/110/aa011174_v1.jpg";
+moduleitems[4].src = "//snpi.dell.com/snp/images2/110/aa114448.jpg";
+
+4.
+//Get the div to change the background color .
+row = $('[class="text-centered right-offset-15 xs-left-offset-15 gray-light half-image-module"]');
+//Iterate through the list and find the PowerAdapter tile.
+PowerAdapter = row[11];
+
+$(PowerAdapter).css("background-color", "green");
+
+
+//Find the div containing prices. 
+price = $('[class="text-centered half-hero-pricing"]');
+pprice1 = price[44].textContent;
+pprice2 = price[45].textContent;
+pprice3 = price[46].textContent;
+pprice4 = price[47].textContent;
+
+//Remove characters from the prices.
+pprice1= pprice1.replace(/[^0-9\.]/g, '');
+pprice2= pprice2.replace(/[^0-9\.]/g, '');
+pprice3= pprice3.replace(/[^0-9\.]/g, '');
+pprice4= pprice4.replace(/[^0-9\.]/g, '');
+
+//Typecast the remaining string numbers to float to be able to perform calculations.
+p1 = parseFloat(pprice1);
+p2 = parseFloat(pprice1);
+p3 = parseFloat(pprice1);
+p4 = parseFloat(pprice1);
+//show the sum in the form of an alert.
+alert( p1+p2+p3+p4);
+
+

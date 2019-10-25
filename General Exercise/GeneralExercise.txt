@@ -1,0 +1,31 @@
+Assess your knowledge level on the following languages (1 = none; 5 = expert):
+
+Vanilla JS - 3
+jQuery - 3
+HTML/HTML5 - 4
+CSS/CSS3 - 4
+Ajax - 3
+AngularJS - 0
+Bootstrap - 4
+
+What is the width of a container with 100px of width and 5px of padding? 
+Ans- 105px
+
+How to apply a click event to all paragraphs except for the last?
+Ans- This can be done using the jquery- $(":not(selector)")
+The last <p> tag can be placed in the (selector).
+
+Why does the alert show "Jack" first and then undefined? 
+
+function identity() {
+    var name = 'Jack';
+    alert(name);
+    return
+    name
+};
+
+var who = identity();
+alert(who)
+
+Ans- Jack shows up because of the first alert and since the return statment in fucntion and the name are not written on the same
+ line so the identity function will return undefined/exception value which is stored in who.
